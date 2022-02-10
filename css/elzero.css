@@ -23,6 +23,11 @@
   z-index: 1;
   transition: var(--main-transition);
 }
+@media (max-width: 767px) {
+  .main-title {
+    font-size: 25px;
+  }
+}
 .main-title::before,
 .main-title::after {
   content: "";
