@@ -1540,13 +1540,18 @@ input[type="submit"]:hover {
 .footer .box.contact {
   color: #777;
 }
+@media (max-width: 500px) {
+  .footer .box.contact {
+    text-align: center;
+  }
+}
 .footer .box.contact .child {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 .footer .box.contact .child i {
-  margin-right: 5px;
+  margin-right: 10px;
   color: var(--main-color);
   font-size: 25px;
 }
