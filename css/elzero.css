@@ -93,6 +93,20 @@ html {
 body {
   font-family: "Cairo", sans-serif;
 }
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(23 135 224 / 20%);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(33 150 243 / 50%);
+  border-radius: 5px;
+  height: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(33 150 243 / 100%);
+}
 ul {
   list-style: none;
   padding: 0;
@@ -1586,7 +1600,7 @@ input[type="submit"]:hover {
   height: calc(100vh - 90vh);
   color: var(--main-color);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   letter-spacing: -1px;
   transition: var(--main-transition);
@@ -1622,8 +1636,39 @@ input[type="submit"]:hover {
 .end .right {
   animation: to-right 0.5s linear infinite;
 }
+.end p {
+  width: 147px;
+  border-right: 2px solid var(--main-color);
+  overflow: hidden;
+  white-space: nowrap;
+  transition: var(--main-transition);
+  animation: control-width 10s steps(19) 1s infinite, blink 0.5s infinite;
+}
+.end:hover p {
+  animation: control-width 0s, blink 0.5s infinite;
+  border-right: none;
+}
 /* End footer */
 /* Start Animation */
+@keyframes control-width {
+  0%,
+  25%,
+  100% {
+    width: 0;
+  }
+  50%,
+  75% {
+    width: 147px;
+  }
+}
+@keyframes blink {
+  from {
+    border-right-color: var(--main-color);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
 @keyframes up-and-down {
   0%,
   100% {
